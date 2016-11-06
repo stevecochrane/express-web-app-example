@@ -4,5 +4,9 @@
   "description": "An example of a web app built with Express, for self-education.",
   "main": "express-web-app-example.js",
   "author": "Steve Cochrane",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0",
+    "pug": "^2.0.0-beta6"
+  }
 }
