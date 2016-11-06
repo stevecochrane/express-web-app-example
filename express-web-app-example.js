@@ -24,6 +24,10 @@ app.set("view engine", "handlebars");
 //	Serve static contents from the public directory
 app.use(express.static(__dirname + "/public"));
 
+app.get("/", function(req, res) {
+	res.render("home");
+});
+
 //	Handle 404 errors
 app.use(function(req, res) {
 	res.type("text/plain");
