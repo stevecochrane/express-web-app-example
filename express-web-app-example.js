@@ -11,8 +11,8 @@ app.set("case sensitive routing", true);
 //	Treat "/foo" and "/foo/" as different URLs
 app.set("strict routing", true);
 
-//	Default to port 3000
-app.set("port", process.env.PORT || 3000);
+//	Default to port 3001
+app.set("port", process.env.PORT || 3001);
 
 //	Compress all requests
 app.use(compression());
