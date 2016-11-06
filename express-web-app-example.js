@@ -1,7 +1,8 @@
 var compression = require("compression");
 var express     = require("express");
+var handlebars  = require("express-handlebars");
 
-//  Initialize Express
+//	Initialize Express
 var app = express();
 
 //  Treat "/foo" and "/Foo" as different URLs
@@ -15,6 +16,10 @@ app.set("port", process.env.PORT || 3000);
 
 //  Compress all requests
 app.use(compression());
+
+//  Set Handlebars as the default template language
+app.engine("handlebars", handlebars({defaultLayout: "main"}));
+app.set("view engine", "handlebars");
 
 //  Handle 404 errors
 app.use(function(req, res) {
