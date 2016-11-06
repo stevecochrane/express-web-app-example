@@ -1,0 +1,8 @@
+{
+  "name": "express-web-app-example",
+  "version": "1.0.0",
+  "description": "An example of a web app built with Express, for self-education.",
+  "main": "express-web-app-example.js",
+  "author": "Steve Cochrane",
+  "license": "MIT"
+}
