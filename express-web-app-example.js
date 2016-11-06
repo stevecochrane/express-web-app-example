@@ -21,6 +21,9 @@ app.use(compression());
 app.engine("handlebars", handlebars({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
+//	Serve static contents from the public directory
+app.use(express.static(__dirname + "/public"));
+
 //	Handle 404 errors
 app.use(function(req, res) {
 	res.type("text/plain");
