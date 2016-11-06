@@ -18,7 +18,7 @@ app.set("port", process.env.PORT || 3000);
 app.use(compression());
 
 //	Set Handlebars as the default template language
-app.engine("handlebars", handlebars({defaultLayout: "main"}));
+app.engine("handlebars", handlebars({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 //	Serve static contents from the public directory
