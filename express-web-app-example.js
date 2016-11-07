@@ -2,6 +2,9 @@ var compression = require("compression");
 var express     = require("express");
 var handlebars  = require("express-handlebars");
 
+//	Include the local exampleRestApi library
+var exampleRestApi = require("./lib/exampleRestApi.js");
+
 //	Initialize Express
 var app = express();
 
@@ -24,8 +27,12 @@ app.set("view engine", "handlebars");
 //	Serve static contents from the public directory
 app.use(express.static(__dirname + "/public"));
 
+//	Default app view, which displays all elements from the API
 app.get("/", function(req, res) {
-	res.render("home");
+	exampleRestApi.viewAll(function(elements) {
+		res.locals.elements = elements;
+		res.render("home");
+	});
 });
 
 //	Handle 404 errors
