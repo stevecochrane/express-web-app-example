@@ -43,6 +43,11 @@ app.get("/element/:elementId", function(req, res) {
 	});
 });
 
+//	Add a new element
+app.get("/add", function(req, res) {
+	res.render("add");
+});
+
 //	Handle 404 errors
 app.use(function(req, res) {
 	res.type("text/plain");
