@@ -29,7 +29,7 @@ app.use(express.static(__dirname + "/public"));
 
 //	Default app view, which displays all elements from the API
 app.get("/", function(req, res) {
-	exampleRestApi.viewAll(function(elements) {
+	exampleRestApi.viewAllElements(function(elements) {
 		res.locals.elements = elements;
 		res.render("home");
 	});
