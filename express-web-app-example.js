@@ -37,7 +37,7 @@ app.get("/", function(req, res) {
 
 //	View a specific element
 app.get("/element/:elementId", function(req, res) {
-	exampleRestApi.viewElement(elementId, function(element) {
+	exampleRestApi.viewElement(req.params.elementId, function(element) {
 		res.locals.element = element;
 		res.render("element");
 	});
