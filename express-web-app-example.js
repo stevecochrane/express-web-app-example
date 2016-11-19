@@ -35,6 +35,14 @@ app.get("/", function(req, res) {
 	});
 });
 
+//	View a specific element
+app.get("/element/:elementId", function(req, res) {
+	exampleRestApi.viewElement(elementId, function(element) {
+		res.locals.element = element;
+		res.render("element");
+	});
+});
+
 //	Handle 404 errors
 app.use(function(req, res) {
 	res.type("text/plain");
