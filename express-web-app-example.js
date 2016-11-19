@@ -64,6 +64,19 @@ app.get("/added", function(req, res) {
 	res.render("added");
 });
 
+//	Delete an element
+app.get("/delete/:elementId", function(req, res) {
+	res.locals.elementId = req.params.elementId;
+	res.render("delete");
+});
+
+//	Form handler for the Delete page
+app.post("/delete/:elementId", function(req, res) {
+	exampleRestApi.deleteElement(req.params.elementId, function(element) {
+		res.redirect(303, "/");
+	});
+});
+
 //	Handle 404 errors
 app.use(function(req, res) {
 	res.type("text/plain");
