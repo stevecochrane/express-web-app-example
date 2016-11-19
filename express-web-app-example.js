@@ -1,3 +1,4 @@
+var bodyParser  = require("body-parser");
 var compression = require("compression");
 var express     = require("express");
 var handlebars  = require("express-handlebars");
@@ -19,6 +20,9 @@ app.set("port", process.env.PORT || 3001);
 
 //	Compress all requests
 app.use(compression());
+
+//  Set up processing of forms
+app.use(bodyParser.urlencoded({ "extended": true }));
 
 //	Set Handlebars as the default template language
 app.engine("handlebars", handlebars({ defaultLayout: "main" }));
