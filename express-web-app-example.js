@@ -77,6 +77,14 @@ app.post("/delete/:elementId", function(req, res) {
 	});
 });
 
+//	Edit an element
+app.get("/edit/:elementId", function(req, res) {
+	exampleRestApi.viewElement(req.params.elementId, function(element) {
+		res.locals.element = element;
+		res.render("edit");
+	});
+});
+
 //	Handle 404 errors
 app.use(function(req, res) {
 	res.type("text/plain");

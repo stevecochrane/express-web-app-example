@@ -1,0 +1,18 @@
+<h1>Edit an Element</h1>
+
+<form method="POST">
+	<fieldset>
+		<div>
+			<label for="name">Name</label>
+			<input name="name" type="text" value="{{element.name}}" />
+		</div>
+		<div>
+			<label for="description">Description</label>
+			<textarea name="description">{{element.description}}</textarea>
+		</div>
+		<div>
+			<input type="submit" value="Submit" />
+			<input type="button" value="Cancel" />
+		</div>
+	</fieldset>
+</form>
