@@ -52,6 +52,14 @@ app.get("/add", function(req, res) {
 	res.render("add");
 });
 
+//	Form handler for the Add page
+app.post("/add", function(req, res) {
+	console.log("Form (from querystring): " + req.query.form);
+	console.log("Name: " + req.body.elementName);
+	console.log("Description: " + req.body.elementDescription);
+	res.redirect(303, "/added");
+});
+
 //	Success page for adding a new element
 app.get("/added", function(req, res) {
 	res.render("added");
