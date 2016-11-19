@@ -54,10 +54,9 @@ app.get("/add", function(req, res) {
 
 //	Form handler for the Add page
 app.post("/add", function(req, res) {
-	console.log("Form (from querystring): " + req.query.form);
-	console.log("Name: " + req.body.elementName);
-	console.log("Description: " + req.body.elementDescription);
-	res.redirect(303, "/added");
+	exampleRestApi.addElement(req.body, function(element) {
+		res.redirect(303, "/added");
+	});
 });
 
 //	Success page for adding a new element
