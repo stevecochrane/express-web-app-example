@@ -52,6 +52,11 @@ app.get("/add", function(req, res) {
 	res.render("add");
 });
 
+//	Success page for adding a new element
+app.get("/added", function(req, res) {
+	res.render("added");
+});
+
 //	Handle 404 errors
 app.use(function(req, res) {
 	res.type("text/plain");
