@@ -85,6 +85,13 @@ app.get("/edit/:elementId", function(req, res) {
 	});
 });
 
+//	Form handler for the Edit page
+app.post("/edit/:elementId", function(req, res) {
+	exampleRestApi.editElement(req.params.elementId, req.body, function(element) {
+		res.redirect(303, "/");
+	});
+});
+
 //	Handle 404 errors
 app.use(function(req, res) {
 	res.type("text/plain");
