@@ -104,9 +104,8 @@ app.get("/edit-success", function(req, res) {
 
 //	Handle 404 errors
 app.use(function(req, res) {
-	res.type("text/plain");
 	res.status(404);
-	res.send("404 - Not Found");
+	res.render("404");
 });
 
 //	Handle 500 errors
