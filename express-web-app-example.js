@@ -112,14 +112,24 @@ app.get("/edit/:elementId", function(req, res) {
 
 //	Form handler for the Edit page
 app.post("/edit/:elementId", function(req, res) {
-	exampleRestApi.editElement(req.params.elementId, req.body, function() {
-		res.redirect(303, "/edit-success");
+	exampleRestApi.editElement(req.params.elementId, req.body, function(err) {
+		if (err) {
+			res.redirect(303, "/edit-error");
+		} else {
+			res.redirect(303, "/edit-success");
+		}
 	});
 });
 
 //	Success page for editing an element
 app.get("/edit-success", function(req, res) {
 	res.render("edit-success");
+});
+
+//	Error page for editing an element
+app.get("/edit-error", function(req, res) {
+	res.status(500);
+	res.render("500");
 });
 
 //	Handle 404 errors
