@@ -55,13 +55,13 @@ app.get("/add", function(req, res) {
 //	Form handler for the Add page
 app.post("/add", function(req, res) {
 	exampleRestApi.addElement(req.body, function(element) {
-		res.redirect(303, "/added");
+		res.redirect(303, "/add-success");
 	});
 });
 
 //	Success page for adding a new element
-app.get("/added", function(req, res) {
-	res.render("added");
+app.get("/add-success", function(req, res) {
+	res.render("add-success");
 });
 
 //	Delete an element
