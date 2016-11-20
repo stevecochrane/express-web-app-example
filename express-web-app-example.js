@@ -54,7 +54,7 @@ app.get("/add", function(req, res) {
 
 //	Form handler for the Add page
 app.post("/add", function(req, res) {
-	exampleRestApi.addElement(req.body, function(element) {
+	exampleRestApi.addElement(req.body, function() {
 		res.redirect(303, "/add-success");
 	});
 });
@@ -72,7 +72,7 @@ app.get("/delete/:elementId", function(req, res) {
 
 //	Form handler for the Delete page
 app.post("/delete/:elementId", function(req, res) {
-	exampleRestApi.deleteElement(req.params.elementId, function(element) {
+	exampleRestApi.deleteElement(req.params.elementId, function() {
 		res.redirect(303, "/delete-success");
 	});
 });
@@ -92,7 +92,7 @@ app.get("/edit/:elementId", function(req, res) {
 
 //	Form handler for the Edit page
 app.post("/edit/:elementId", function(req, res) {
-	exampleRestApi.editElement(req.params.elementId, req.body, function(element) {
+	exampleRestApi.editElement(req.params.elementId, req.body, function() {
 		res.redirect(303, "/edit-success");
 	});
 });
