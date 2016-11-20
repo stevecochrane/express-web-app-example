@@ -54,14 +54,24 @@ app.get("/add", function(req, res) {
 
 //	Form handler for the Add page
 app.post("/add", function(req, res) {
-	exampleRestApi.addElement(req.body, function() {
-		res.redirect(303, "/add-success");
+	exampleRestApi.addElement(req.body, function(err) {
+		if (err) {
+			res.redirect(303, "/add-error");
+		} else {
+			res.redirect(303, "/add-success");
+		}
 	});
 });
 
 //	Success page for adding a new element
 app.get("/add-success", function(req, res) {
 	res.render("add-success");
+});
+
+//	Error page for adding a new element
+app.get("/add-error", function(req, res) {
+	res.status(500);
+	res.render("500");
 });
 
 //	Delete an element
