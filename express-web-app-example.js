@@ -93,8 +93,13 @@ app.get("/edit/:elementId", function(req, res) {
 //	Form handler for the Edit page
 app.post("/edit/:elementId", function(req, res) {
 	exampleRestApi.editElement(req.params.elementId, req.body, function(element) {
-		res.redirect(303, "/");
+		res.redirect(303, "/edit-success");
 	});
+});
+
+//	Success page for editing an element
+app.get("/edit-success", function(req, res) {
+	res.render("edit-success");
 });
 
 //	Handle 404 errors
