@@ -82,14 +82,24 @@ app.get("/delete/:elementId", function(req, res) {
 
 //	Form handler for the Delete page
 app.post("/delete/:elementId", function(req, res) {
-	exampleRestApi.deleteElement(req.params.elementId, function() {
-		res.redirect(303, "/delete-success");
+	exampleRestApi.deleteElement(req.params.elementId, function(err) {
+		if (err) {
+			res.redirect(303, "/delete-error");
+		} else {
+			res.redirect(303, "/delete-success");
+		}
 	});
 });
 
 //	Success page for deleting an element
 app.get("/delete-success", function(req, res) {
 	res.render("delete-success");
+});
+
+//	Error page for adding a new element
+app.get("/delete-error", function(req, res) {
+	res.status(500);
+	res.render("500");
 });
 
 //	Edit an element
