@@ -73,8 +73,13 @@ app.get("/delete/:elementId", function(req, res) {
 //	Form handler for the Delete page
 app.post("/delete/:elementId", function(req, res) {
 	exampleRestApi.deleteElement(req.params.elementId, function(element) {
-		res.redirect(303, "/");
+		res.redirect(303, "/delete-success");
 	});
+});
+
+//	Success page for deleting an element
+app.get("/delete-success", function(req, res) {
+	res.render("delete-success");
 });
 
 //	Edit an element
