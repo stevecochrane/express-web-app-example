@@ -8,9 +8,9 @@ element is a name and a description.
 
 ### Preview
 
-![Home](/static/images/preview-home-2x.png?raw=true)
+![Home](/static/images/preview-home.png?raw=true)
 
-![Add a New Element](/static/images/preview-add-2x.png?raw=true)
+![Add a New Element](/static/images/preview-add.png?raw=true)
 
 ### Setup
 
