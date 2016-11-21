@@ -1,14 +1,18 @@
-<ul class="list pl0 ma0 bb b--light-gray">
-	{{#each elements}}
-		<li class="cf ph3 bt b--light-gray dt w-100 pv3">
-			<h2 class="dtc v-mid code"><a href="/element/{{_id}}">&lt;{{name}}&gt;</a></h2>
-			<ul class="dtc v-mid tr list">
-				<li class="dib pl2"><a class="no-underline bg-blue hover-bg-dark-blue bg-animate ph3 pv2 f6 white dib br2 pointer" href="/edit/{{_id}}">Edit</a></li>
-				<li class="dib pl2"><a class="no-underline bg-blue hover-bg-dark-blue bg-animate ph3 pv2 f6 white dib br2 pointer" href="/delete/{{_id}}">Delete</a></li>
-			</ul>
-		</li>
-	{{/each}}
-</ul>
+{{#if elements}}
+	<ul class="list pl0 ma0 bb b--light-gray">
+		{{#each elements}}
+			<li class="cf ph3 bt b--light-gray dt w-100 pv3">
+				<h2 class="dtc v-mid code"><a href="/element/{{_id}}">&lt;{{name}}&gt;</a></h2>
+				<ul class="dtc v-mid tr list">
+					<li class="dib pl2"><a class="no-underline bg-blue hover-bg-dark-blue bg-animate ph3 pv2 f6 white dib br2 pointer" href="/edit/{{_id}}">Edit</a></li>
+					<li class="dib pl2"><a class="no-underline bg-blue hover-bg-dark-blue bg-animate ph3 pv2 f6 white dib br2 pointer" href="/delete/{{_id}}">Delete</a></li>
+				</ul>
+			</li>
+		{{/each}}
+	</ul>
+{{else}}
+	<p class="mv4 tc i">There are currently zero elements.</p>
+{{/if}}
 <div class="pt4 tc">
 	<a class="no-underline bg-blue hover-bg-dark-blue bg-animate ph4 pv3 white dib br2 pointer" href="/add">Add New Element</a>
 </div>
