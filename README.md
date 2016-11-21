@@ -6,6 +6,12 @@ time like with [andy-wowhol](https://github.com/stevecochrane/andy-wowhol) so in
 HTML elements. You can add, edit, and delete elements from the list, and all that's stored and displayed for each
 element is a name and a description.
 
+### Preview
+
+![Home](/static/images/preview-home-2x.png?raw=true)
+
+![Add a New Element](/static/images/preview-add-2x.png?raw=true)
+
 ### Setup
 
 This expects there to be an API running on http://localhost:3000 (which is what express-rest-api-example runs on by
