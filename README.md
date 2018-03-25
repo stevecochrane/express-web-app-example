@@ -1,10 +1,10 @@
-# express-web-app-example
+# HTML Reference Web Application
 
 An example of a web application built with Express, for self-education. This is a front-end client for
-[express-rest-api-example](https://github.com/stevecochrane/express-rest-api-example). I didn't have a clever idea this
-time like with [andy-wowhol](https://github.com/stevecochrane/andy-wowhol) so instead, this is a boring ol' list of
-HTML elements. You can add, edit, and delete elements from the list, and all that's stored and displayed for each
-element is a name and a description.
+[html-reference-api](https://github.com/stevecochrane/html-reference-api). I didn't have a clever idea this
+time like with [Andy WoWhol](https://github.com/stevecochrane/andy-wowhol) so instead, this is a list of
+HTML elements for reference. You can add, edit, and delete elements from the list, and all that's stored and displayed
+for each element is a name and a description.
 
 ### Preview
 
@@ -14,7 +14,7 @@ element is a name and a description.
 
 ### Setup
 
-This expects there to be an API running on http://localhost:3000 (which is what express-rest-api-example runs on by
+This expects there to be an API running on http://localhost:3000 (which is what html-reference-api runs on by
 default), so to use this, that should be running first.
 
 Once you've done that, and assuming you already have [Node](https://nodejs.org/) installed, navigate to the base
@@ -23,7 +23,7 @@ directory with a command line interface and do this:
 ```bash
 npm install
 gulp
-node express-web-app-example.js
+node html-reference-webapp.js
 ```
 
 ### Notes

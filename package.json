@@ -1,8 +1,8 @@
 {
-  "name": "express-web-app-example",
+  "name": "html-reference-webapp",
   "version": "1.0.0",
   "description": "An example of a web app built with Express, for self-education.",
-  "main": "express-web-app-example.js",
+  "main": "html-reference-webapp.js",
   "author": "Steve Cochrane",
   "license": "MIT",
   "dependencies": {
