@@ -29,7 +29,7 @@ node html-reference-webapp.js
 ### Notes
 
 There is still a lot that could be done to optimize things here. The error handling could probably be handled in a more
-optimal way, there's a lot of repetition in the exampleRestApi module, the router could be separated out from the main
+optimal way, there's a lot of repetition in the htmlReferenceApi module, the router could be separated out from the main
 app file, etc.
 
 Also I took this as an opportunity to try out some different tech, so instead of Jade/Pug, this uses Handlebars, and

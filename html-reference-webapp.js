@@ -3,8 +3,8 @@ var compression = require("compression");
 var express     = require("express");
 var handlebars  = require("express-handlebars");
 
-//	Include the local exampleRestApi library
-var exampleRestApi = require("./lib/exampleRestApi.js");
+//	Include the local htmlReferenceApi library
+var htmlReferenceApi = require("./lib/htmlReferenceApi.js");
 
 //	Initialize Express
 var app = express();
@@ -33,7 +33,7 @@ app.use(express.static(__dirname + "/public"));
 
 //	Default app view, which displays all elements from the API
 app.get("/", function(req, res) {
-	exampleRestApi.viewAllElements(function(elements) {
+	htmlReferenceApi.viewAllElements(function(elements) {
 		res.locals.elements = elements;
 		res.render("home");
 	});
@@ -41,7 +41,7 @@ app.get("/", function(req, res) {
 
 //	View a specific element
 app.get("/element/:elementId", function(req, res) {
-	exampleRestApi.viewElement(req.params.elementId, function(element) {
+	htmlReferenceApi.viewElement(req.params.elementId, function(element) {
 		res.locals.element = element;
 		res.render("element");
 	});
@@ -54,7 +54,7 @@ app.get("/add", function(req, res) {
 
 //	Form handler for the Add page
 app.post("/add", function(req, res) {
-	exampleRestApi.addElement(req.body, function(err) {
+	htmlReferenceApi.addElement(req.body, function(err) {
 		if (err) {
 			res.redirect(303, "/add-error");
 		} else {
@@ -82,7 +82,7 @@ app.get("/delete/:elementId", function(req, res) {
 
 //	Form handler for the Delete page
 app.post("/delete/:elementId", function(req, res) {
-	exampleRestApi.deleteElement(req.params.elementId, function(err) {
+	htmlReferenceApi.deleteElement(req.params.elementId, function(err) {
 		if (err) {
 			res.redirect(303, "/delete-error");
 		} else {
@@ -104,7 +104,7 @@ app.get("/delete-error", function(req, res) {
 
 //	Edit an element
 app.get("/edit/:elementId", function(req, res) {
-	exampleRestApi.viewElement(req.params.elementId, function(element) {
+	htmlReferenceApi.viewElement(req.params.elementId, function(element) {
 		res.locals.element = element;
 		res.render("edit");
 	});
@@ -112,7 +112,7 @@ app.get("/edit/:elementId", function(req, res) {
 
 //	Form handler for the Edit page
 app.post("/edit/:elementId", function(req, res) {
-	exampleRestApi.editElement(req.params.elementId, req.body, function(err) {
+	htmlReferenceApi.editElement(req.params.elementId, req.body, function(err) {
 		if (err) {
 			res.redirect(303, "/edit-error");
 		} else {
